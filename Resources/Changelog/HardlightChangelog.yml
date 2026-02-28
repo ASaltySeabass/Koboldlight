@@ -1408,3 +1408,11 @@ Entries:
       message: Added Security and Command companies and applied them to said jobs.
   id: 151
   time: '2026-02-26T05:33:32.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Fix
+      message: >-
+        Gave shadekin and avali the markings they should have had for ages. Go
+        nuts. Add nuts to your shadekin. What the fuck ever.
+  id: 152
+  time: '2026-02-28T23:01:04.0000000+00:00'
