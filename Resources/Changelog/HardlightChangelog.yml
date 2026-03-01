@@ -1509,3 +1509,9 @@ Entries:
         maps.
   id: 160
   time: '2026-03-01T07:12:24.0000000+00:00'
+- author: warcrazed11
+  changes:
+    - type: Fix
+      message: Fixed contra levels on syndicate cosmetics.
+  id: 161
+  time: '2026-03-01T21:56:59.0000000+00:00'
