@@ -1501,3 +1501,11 @@ Entries:
         deletion.
   id: 159
   time: '2026-03-01T07:04:57.0000000+00:00'
+- author: VoidedDevNull
+  changes:
+    - type: Tweak
+      message: >-
+        Amber station has been tweaked to bring the map up to par with other
+        maps.
+  id: 160
+  time: '2026-03-01T07:12:24.0000000+00:00'
