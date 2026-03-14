@@ -1723,3 +1723,9 @@ Entries:
       message: Tweaked WT-550 top mags and ammo acceptance to take the mags.
   id: 186
   time: '2026-03-12T04:14:00.0000000+00:00'
+- author: Nikode16
+  changes:
+    - type: Add
+      message: Added the C.C.S Herzyn to Sec and ColSec Shipyards
+  id: 187
+  time: '2026-03-14T00:55:57.0000000+00:00'
