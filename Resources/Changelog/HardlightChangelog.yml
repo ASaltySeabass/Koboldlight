@@ -2254,3 +2254,9 @@ Entries:
       message: Aphrodesiac Bite Trait~!
   id: 243
   time: '2026-04-03T21:10:50.0000000+00:00'
+- author: Sully669
+  changes:
+    - type: Fix
+      message: Fixed a bug where succumbing to your fate deleted your character
+  id: 244
+  time: '2026-04-03T21:12:13.0000000+00:00'
