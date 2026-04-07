@@ -1071,11 +1071,11 @@
           - SecurityUplink
 
 - type: listing
-  id: UplinkSecurityCash1000
-  name:  uplink-security-cash1000-name
-  description: uplink-security-cash1000-desc
-  productEntity: SpaceCash1000
-  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000 }
+  id: UplinkSecurityCash10000
+  name:  uplink-security-cash10000-name
+  description: uplink-security-cash10000-desc
+  productEntity: SpaceCash10000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_10000 }
   cost:
     FrontierUplinkCoin: 1
   categories:
@@ -1091,7 +1091,7 @@
   name:  uplink-security-cash45000-name
   description: uplink-security-cash1000-desc
   productEntity: SpaceCash100000
-  icon: { sprite: Objects/Economy/cash.rsi, state: cash_25000 }
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_100000 }
   cost:
     FrontierUplinkCoin: 10
   categories:
