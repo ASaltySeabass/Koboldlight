@@ -2744,3 +2744,11 @@ Entries:
       message: Interdyne Jet Injector
   id: 291
   time: '2026-04-16T20:38:21.0000000+00:00'
+- author: Illumos
+  changes:
+    - type: Add
+      message: Twenty more funky RCD plating shapes. Go nuts.
+    - type: Add
+      message: Normal shuttle windows to the RCD
+  id: 292
+  time: '2026-04-16T20:46:03.0000000+00:00'
