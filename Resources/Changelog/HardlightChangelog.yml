@@ -2850,3 +2850,11 @@ Entries:
         actually written.
   id: 306
   time: '2026-04-20T21:05:15.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Advanced radar and gunnery consoles now display radar blips and related
+        line effects out to their configured range instead of stopping at 256m.
+  id: 307
+  time: '2026-04-20T21:12:56.0000000+00:00'
