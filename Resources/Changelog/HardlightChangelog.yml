@@ -2818,3 +2818,9 @@ Entries:
       message: THIRTY SEVEN new wing markings!
   id: 302
   time: '2026-04-20T04:00:17.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: Reduced NPC pathfinding stalls when targets or routes change rapidly.
+  id: 303
+  time: '2026-04-20T20:41:11.0000000+00:00'
