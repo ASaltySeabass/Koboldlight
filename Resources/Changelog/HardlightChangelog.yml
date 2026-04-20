@@ -2858,3 +2858,13 @@ Entries:
         line effects out to their configured range instead of stopping at 256m.
   id: 307
   time: '2026-04-20T21:12:56.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: Fixed ship-saved items losing runtime actions after load.
+    - type: Fix
+      message: >-
+        Fixed saved solution containers loading with empty fill visuals until
+        their contents changed.
+  id: 308
+  time: '2026-04-20T21:24:25.0000000+00:00'
