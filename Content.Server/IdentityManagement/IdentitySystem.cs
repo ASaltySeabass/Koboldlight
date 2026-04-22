@@ -109,6 +109,13 @@ public sealed class IdentitySystem : SharedIdentitySystem
         if (identity.IdentityEntitySlot.ContainedEntity is not { } ident)
             return;
 
+        if (TerminatingOrDeleted(uid)
+            || TerminatingOrDeleted(ident)
+            || !TryComp<MetaDataComponent>(ident, out _))
+        {
+            return;
+        }
+
         var representation = GetIdentityRepresentation(uid);
         var name = GetIdentityName(uid, representation);
 
