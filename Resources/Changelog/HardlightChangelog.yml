@@ -2933,3 +2933,13 @@ Entries:
       message: Added War Emergency Power to shuttle consoles
   id: 317
   time: '2026-04-22T06:01:49.0000000+00:00'
+- author: Illumos
+  changes:
+    - type: Remove
+      message: Synths and IPCs no longer get Binary access (instead Trinary).
+    - type: Remove
+      message: The RD no longer gets Binary access (instead Trinary).
+    - type: Add
+      message: Synthetic trait now gives you access to Trinary.
+  id: 318
+  time: '2026-04-22T06:05:45.0000000+00:00'
