@@ -113,6 +113,11 @@ public static class ShipSaveYamlSanitizer
         "PortalRed",
         "ReactorGasPipe",
         "ShipShield",
+        // NullSpace items
+        "ClothingEyesGlassesNullSpace",
+        "BluespaceFlasher",
+        "ClothingNullHarness",
+        "ClothingNullSpaceTeleporter",
     };
 
     // Entity-level exclusion by component signature.

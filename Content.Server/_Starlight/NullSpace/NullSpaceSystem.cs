@@ -12,10 +12,12 @@ using Content.Shared._Starlight.NullSpace;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Carrying;
 using Content.Shared.Stunnable;
 using Robust.Shared.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Content.Shared._Starlight;
 
 namespace Content.Server._Starlight.NullSpace;
 
@@ -37,6 +39,14 @@ public sealed class EtherealSystem : SharedEtherealSystem
         base.Initialize();
         SubscribeLocalEvent<NullSpaceComponent, AtmosExposedGetAirEvent>(OnExpose);
         SubscribeLocalEvent<BluespacePulseActionEvent>(OnBluespacePulse);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<NullSpaceComponent, KnockedDownComponent>();
+        while (query.MoveNext(out var uid, out _, out _))
+            RemCompDeferred<NullSpaceComponent>(uid);
     }
 
     public override void OnStartup(EntityUid uid, NullSpaceComponent component, MapInitEvent args)
@@ -72,6 +82,13 @@ public sealed class EtherealSystem : SharedEtherealSystem
         {
             _pulling.TryStopPull(pullerComp.Pulling.Value, subjectPulling);
         }
+
+        if (TryComp<CarryingComponent>(uid, out var carrying)
+            && !HasComp<PressureImmunityComponent>(carrying.Carried))
+        {
+            EnsureComp<PressureImmunityComponent>(carrying.Carried);
+            EnsureComp<NullCarryPressureImmunityComponent>(carrying.Carried);
+        }
     }
 
     public override void OnShutdown(EntityUid uid, NullSpaceComponent component, ComponentShutdown args)
@@ -86,7 +103,12 @@ public sealed class EtherealSystem : SharedEtherealSystem
         }
 
         if (TryComp<EyeComponent>(uid, out var eye))
-            _eye.SetVisibilityMask(uid, (int)VisibilityFlags.Normal, eye);
+        {
+            var mask = (int)VisibilityFlags.Normal;
+            if (HasComp<ShowNullSpaceComponent>(uid))
+                mask |= (int)VisibilityFlags.NullSpace;
+            _eye.SetVisibilityMask(uid, mask, eye);
+        }
 
         if (TryComp<TemperatureComponent>(uid, out var temp))
             temp.AtmosTemperatureTransferEfficiency = 0.1f;
@@ -106,6 +128,13 @@ public sealed class EtherealSystem : SharedEtherealSystem
             && TryComp<PullableComponent>(pullerComp.Pulling, out var subjectPulling))
         {
             _pulling.TryStopPull(pullerComp.Pulling.Value, subjectPulling);
+        }
+
+        if (TryComp<CarryingComponent>(uid, out var carrying)
+            && HasComp<NullCarryPressureImmunityComponent>(carrying.Carried))
+        {
+            RemComp<NullCarryPressureImmunityComponent>(carrying.Carried);
+            RemComp<PressureImmunityComponent>(carrying.Carried);
         }
     }
 
@@ -150,7 +179,8 @@ public sealed class EtherealSystem : SharedEtherealSystem
             if (!HasComp<NullSpaceComponent>(ent))
                 continue;
 
-            _audio.PlayPvs(NullSpaceCutoffSound, ent);
+            if (HasComp<ShadekinComponent>(ent))
+                _audio.PlayPvs(NullSpaceCutoffSound, ent);
             RemComp<NullSpaceComponent>(ent);
             _stun.TryParalyze(ent, stunTime, true);
         }
