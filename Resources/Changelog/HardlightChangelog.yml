@@ -2971,3 +2971,9 @@ Entries:
       message: SmartFridges should no longer block ships from saving.
   id: 321
   time: '2026-04-22T21:08:13.0000000+00:00'
+- author: Sully669
+  changes:
+    - type: Add
+      message: more vinyls
+  id: 322
+  time: '2026-04-22T21:23:53.0000000+00:00'
