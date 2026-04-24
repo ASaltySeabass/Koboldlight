@@ -3072,3 +3072,9 @@ Entries:
         actually enforces, so jobs that look open really are open.
   id: 330
   time: '2026-04-24T00:16:07.0000000+00:00'
+- author: re-silvered
+  changes:
+    - type: Add
+      message: Vampirism trait!
+  id: 331
+  time: '2026-04-24T01:27:23.0000000+00:00'
