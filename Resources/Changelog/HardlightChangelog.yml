@@ -3049,3 +3049,13 @@ Entries:
         magazines.
   id: 328
   time: '2026-04-23T23:43:31.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Sold and deleted shipyard ships no longer leave behind zombie entries in
+        the station list and shuttle-records consoles. Records carried forward
+        by round persistence are pruned at round start if their grid no longer
+        exists.
+  id: 329
+  time: '2026-04-23T23:49:42.0000000+00:00'
