@@ -3204,3 +3204,15 @@ Entries:
       message: New Starlight Tiles Ported
   id: 345
   time: '2026-04-25T21:15:17.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Fixed `MothershipCore` spamming stack traces (and tanking server
+        tickrate) when tools were used on it.
+    - type: Fix
+      message: >-
+        Fixed solution containers spamming stack traces every tick after
+        FTL/shipyard moves, a major source of recent server lag.
+  id: 346
+  time: '2026-04-25T21:16:48.0000000+00:00'
