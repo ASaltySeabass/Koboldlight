@@ -183,6 +183,30 @@
     aggroLeashRange: 1000
     aggroDuration: 10
 
+# Small-rank byte (e.g. sgbyte): slower in the orbit ring and worse at
+# leading moving targets, so it sprays and misses more often.
+- type: entity
+  id: NpcStationAiByteSmall
+  name: shooter core
+  parent: NpcStationAiByte
+  suffix: AI, Byte (Small)
+  components:
+  - type: HTN
+    rootTask:
+      task: ShooterShuttleByteSmallAggroCompound
+
+# Large-rank byte (e.g. lbyte/lgbyte): faster orbit cruise, perfect
+# target leading, rarely peels off.
+- type: entity
+  id: NpcStationAiByteLarge
+  name: shooter core
+  parent: NpcStationAiByte
+  suffix: AI, Byte (Large)
+  components:
+  - type: HTN
+    rootTask:
+      task: ShooterShuttleByteLargeAggroCompound
+
 #region Drone AIs
 
 - type: entity
