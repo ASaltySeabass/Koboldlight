@@ -534,14 +534,21 @@ public sealed partial class FireControlSystem : EntitySystem
         // Set the cooldown for next firing
         comp.NextFire = _timing.CurTime + TimeSpan.FromSeconds(comp.FireCooldown);
 
+        var hasGun = _gunQuery.TryComp(weapon, out var gun);
+
         if (_fireRotateQuery.HasComp(weapon))
         {
             var goalAngle = Angle.FromWorldVec(direction);
+
+            // Align visual rotation with this gun's configured local forward direction.
+            if (hasGun && gun.DefaultDirection.LengthSquared() > float.Epsilon)
+                goalAngle -= Angle.FromWorldVec(gun.DefaultDirection);
+
             _rotateToFace.TryRotateTo(weapon, goalAngle, 0f, Angle.FromDegrees(1), float.MaxValue, weaponXform);
         }
 
         // Try to get a gun component and fire the weapon
-        if (_gunQuery.TryComp(weapon, out var gun))
+        if (hasGun)
         {
             _gun.AttemptShots(user, weapon, gun, coords, TimeSpan.FromSeconds(0.2));
             return true;
