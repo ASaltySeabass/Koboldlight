@@ -3420,3 +3420,11 @@ Entries:
         (CivilianServices tier 2).
   id: 364
   time: '2026-04-30T20:20:54.0000000+00:00'
+- author: Kronyxxx
+  changes:
+    - type: Fix
+      message: >-
+        Medicated sutures and regenerative meshes can again be crafted in the
+        medical assembler using lathe-produced bruise packs and ointments.
+  id: 365
+  time: '2026-04-30T20:31:44.0000000+00:00'
