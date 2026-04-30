@@ -1755,6 +1755,18 @@ namespace Content.Server.Shuttles.Save
                         {
                             componentData = SerializeSolutionComponent(entityUid, solutionManager);
                         }
+                        else if (component is SolutionComponent solutionComp
+                                 && !float.IsFinite(solutionComp.Solution.Temperature))
+                        {
+                            // Issue #1511: SolutionComponent child entities carry their Temperature directly,
+                            // and the Robust YAML serializer will write "temperature: NaNK" for NaN values.
+                            // The SolutionContainerManagerComponent path already guards against this, but the
+                            // SolutionComponent entity itself must be sanitized before the standard write path.
+                            _sawmill.Warning($"SolutionComponent on entity {entityUid} had non-finite temperature " +
+                                             $"{solutionComp.Solution.Temperature}; resetting to room temperature before serializing.");
+                            solutionComp.Solution.Temperature = Atmospherics.T20C;
+                            componentData = SerializeComponent(component);
+                        }
                         else
                         {
                             componentData = SerializeComponent(component);
