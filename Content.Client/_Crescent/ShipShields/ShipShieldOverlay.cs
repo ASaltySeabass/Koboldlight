@@ -23,7 +23,7 @@ public sealed class ShipShieldOverlay : Overlay
     private readonly ShaderInstance _unshadedShader;
     private readonly List<DrawVertexUV2D> _verts = new(128); // Mono
 
-    public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowWorld;
+    public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowEntities;
 
     public ShipShieldOverlay(IEntityManager entityManager, IPrototypeManager prototypeManager, IResourceCache resourceCache)
     {
