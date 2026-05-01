@@ -3445,3 +3445,17 @@ Entries:
       message: gunnery console has shield status and draws shields
   id: 367
   time: '2026-04-30T20:59:38.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: Handheld fax machines can now be spawned by admins.
+    - type: Add
+      message: >-
+        Service Cyborgs now have access to fax machines as part of the
+        bureaucracy module.
+    - type: Add
+      message: Service Cyborgs can now fabricate blank sheets of paper.
+    - type: Tweak
+      message: Fax machine UI has received minor improvements for better clarity.
+  id: 368
+  time: '2026-05-01T00:19:28.0000000+00:00'
