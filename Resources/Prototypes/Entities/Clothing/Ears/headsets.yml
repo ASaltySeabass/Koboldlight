@@ -323,13 +323,13 @@
   # HardLight start: Replaced starting encryption keys with intrinsic radio channels.
   - type: ActiveRadio
     intrinsicChannels:
-    - Trinary # HL: Move RD's headset to Trinary
+    - Binary
     - Command
     - Science
     - Common
   - type: EncryptionKeyHolder
     intrinsicChannels:
-    - Trinary # HL: Move RD's headset to Trinary
+    - Binary
     - Command
     - Science
     - Common
