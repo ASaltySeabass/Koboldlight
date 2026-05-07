@@ -27,5 +27,5 @@ uplink-security-hardsuit-command-desc = A heavily armored Colsec suit. Space pro
 uplink-security-Weapons-BigL-name = Big Leady
 uplink-security-Weapons-BigL-desc = An old yet faithful design, and a favorite among irregular forces on many worlds.
 
-uplink-security-Weapons-railgun-name = NT-88 Peregrine
-uplink-security-Weapons-railgun-desc = From NanoTrasen Skunkworks, entrusted to ColComm for field testing.
+uplink-security-Weapons-railgun-name = NT-88 Marksman's Kit
+uplink-security-Weapons-railgun-desc = A marksman's kit for the NT-88 peregrine, designed by NanoTrasen and entrusted to ColComm for field testing. Contains the railgun, two magazines, and a box of spare ammo.

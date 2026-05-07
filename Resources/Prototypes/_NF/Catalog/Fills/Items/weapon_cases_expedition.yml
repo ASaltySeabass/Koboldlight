@@ -700,7 +700,9 @@
     - id: WeaponRailgunPeregrine
       amount: 1
     - id: MagazineRailgunPeregrine
-      amount: 2
+      amount: 1
+    - id: AmmoBox15mmSabot
+      amount: 1
 
 - type: entity
   parent: WeaponCaseFlammable

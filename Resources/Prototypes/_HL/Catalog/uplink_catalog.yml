@@ -45,10 +45,10 @@
   id: UplinkSecurityRailgun
   name:  uplink-security-Weapons-railgun-name
   description: uplink-security-Weapons-railgun-desc
-  productEntity: WeaponRailgunPeregrine
+  productEntity: WeaponCaseLongRailgunPeregrine
   icon: { sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 10
+    FrontierUplinkCoin: 15
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -69,7 +69,7 @@
     Telecrystal: 8
   categories:
     - UplinkWeaponry
-    
+
 - type: listing
   id: UplinkSyndieOmniHandRight
   name: uplink-syndie-omnihand-right-name
@@ -82,7 +82,7 @@
     Telecrystal: 6
   categories:
   - UplinkCybernetics
-  
+
 - type: listing
   id: UplinkSyndieOmniHandLeft
   name: uplink-syndie-omnihand-left-name
