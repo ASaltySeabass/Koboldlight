@@ -1,5 +1,5 @@
 # Random Hardlight additions that done need localizin'
-improvised-railgun-mag-desc = Making a railgun takes a research team five years and multiple doctorates. Making the ammunition for one, on the other hand, takes a minute or two.
+improvised-railgun-sabot-desc = A hastily constructed sabot for use with the NT-88 Peregrine that is little more than a rod encased in plasteel.
 construction-graph-component-gaslock-circuit-board = a portable gaslock circuit board
 storage-port-construction-desc = A gas storage port, holds gas canisters without leaking gas!
 improvised-scrap-ring-lv-desc = a ring made out of welded LV cable

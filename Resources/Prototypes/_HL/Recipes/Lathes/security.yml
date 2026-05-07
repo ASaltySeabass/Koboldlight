@@ -1,12 +1,28 @@
 - type: latheRecipe
-  parent: BaseAmmoRecipe
-  id: MagRailgun
-  result: MagazineRailgun
-  completetime: 5
+  parent: BaseEmptyAmmoRecipe
+  id: MagazineRailgunPeregrine
+  result: MagazineRailgunPeregrineEmpty
+  completetime: 10
   materials:
     Plasteel: 500
+    Plastic: 500
+    Steel: 500
+    Glass: 200
+    Silver: 50
     Gold: 50
-    Plasma: 500
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBoxRailgunPeregrine
+  result: MagazineRailgunPeregrineEmpty
+  completetime: 10
+  materials:
+    Plasteel: 500
+    Plastic: 500
+    Steel: 500
+    Glass: 200
+    Silver: 50
+    Gold: 50
 
 # Security Borg limbs
 

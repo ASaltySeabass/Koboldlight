@@ -57,13 +57,13 @@ public abstract class SharedPowerCellSystem : EntitySystem
         }
 
         // Special-case the NT-88 Peregrine magazine so it cannot be treated as a generic power cell.
-        var magazineRailgunTag = "MagazineRailgunTag";
-        if (_tag.HasTag(args.EntityUid, magazineRailgunTag) &&
-            (!_itemSlots.TryGetSlot(uid, component.CellSlotId, out var itemSlot) ||
-             !_whitelist.IsWhitelistPass(itemSlot.Whitelist, args.EntityUid)))
-        {
-            args.Cancel();
-        }
+//        var magazineRailgunTag = "MagazineRailgunTag";
+//        if (_tag.HasTag(args.EntityUid, magazineRailgunTag) &&
+//            (!_itemSlots.TryGetSlot(uid, component.CellSlotId, out var itemSlot) ||
+//             !_whitelist.IsWhitelistPass(itemSlot.Whitelist, args.EntityUid)))
+//        {
+//            args.Cancel();
+//        }
     }
 
     private void OnCellInserted(EntityUid uid, PowerCellSlotComponent component, EntInsertedIntoContainerMessage args)

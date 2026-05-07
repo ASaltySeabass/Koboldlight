@@ -1,36 +1,90 @@
-# Empty mags
 - type: entity
-  parent: BasePowerCell
-  id: MagazineRailgun
-  name: Peregrine Magazine
-  description: A magazine built to fuel the NT-88 Peregrine. The warranty is still in effect.
+  parent: [BaseItem, BaseC3ContrabandNoValue, RecyclableItemSteelTiny]
+  id: MagazineRailgunPeregrine
+  name: peregrine magazine (15mm sabot)
+  description: A magazine specially designed for the NT-88 Peregrine. Uses 15mm sabot ammo.
   components:
   - type: Tag
     tags:
-      - MagazineRailgunTag
+      - MagazineRailgunPeregrine
   - type: Item
     size: Small
-  - type: Battery
-    maxCharge: 5000 # DV did this I'm doing too monke see monke do
-    startingCharge: 5000
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge15mmSabot
+    proto: Cartridge15mmSabot
+    capacity: 5
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _HL/Objects/Weapons/Guns/Ammunition/Magazine/Railgun/railgun_mag.rsi
+    sprite: _HL/Objects/Weapons/Guns/Ammunition/Magazine/Peregrine/peregrine_mag.rsi
     layers:
-    - map: ["enum.GunVisualLayers.Base"]
-      state: base
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: mag-unshaded-1
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
 
 - type: entity
-  parent: MagazineRailgun
-  id: MagazineRailgunImprovised
-  name: Improvised Peregrine Magazine
-  description: A magazine cobbled together from found materials. Putting this in your NT-88 Peregrine will void the warranty, but chances are, you're not in a situation to care.
+  parent: [MagazineRailgunPeregrine]
+  id: MagazineRailgunPeregrineEmpty
+  name: peregrine magazine (15mm Sabot)
+  suffix: empty
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
+  parent: MagazineRailgunPeregrine
+  id: MagazineRailgunPeregrineImprovised
+  name: improvised peregrine magazine (15mm Sabot)
+  description: An improvized magazine meant to be used with the NT-88 Peregrine. Uses 15mm sabot ammo.
   components:
   - type: Tag
     tags:
-      - MagazineRailgunTag
+      - MagazineRailgunPeregrine
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge15mmSabot
+    proto: Cartridge15mmSabot
+    capacity: 3
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Guns/Ammunition/Magazine/Peregrine/peregrine_mag_improvised.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  parent: MagazineRailgunPeregrineImprovised
+  id: MagazineRailgunPeregrineImprovisedEmpty
+  name: improvised peregrine magazine (15mm sabot)
+  suffix: empty
+  components:
   - type: Construction
     graph: MagazineRailgunImprovisedCraftingGraph
     node: mag
-  - type: Battery
-    maxCharge: 2500 # way more than a highcap but we'll cross that bridge
-    startingCharge: 2500
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    proto: null

@@ -1,47 +1,74 @@
 - type: entity
   name: NT-88 Peregrine
-  parent: [BaseC3ExpeditionContraband , BaseWeaponPowerCell, BaseGunWieldable]
+  parent: [BaseWeaponRifle, BaseC3ExpeditionContraband]
   id: WeaponRailgunPeregrine
-  description: From NanoTrasen Skunkworks. Uses a specific proprietary cartridge, although it may be possible to jury-rig something workable...
+  description: A miniaturized linear accelerator from NanoTrasen's R&D department. Uses 15mm sabot ammo.
   components:
   - type: Item
-    size: Large
-    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi #floof
+    size: Huge
+    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi
   - type: Sprite
-    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi  #floof
+    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+      - state: mag-unshaded-0
+        map: ["enum.GunVisualLayers.MagUnshaded"]
+        shader: unshaded
   - type: Clothing
-    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi #floof
+    sprite: _HL/Objects/Weapons/Guns/Rifles/peregrine.rsi
     quickEquip: false
     slots:
     - Back
     - suitStorage
-  - type: HitscanBatteryAmmoProvider
-    proto: RailgunLaser
-    fireCost: 500
   - type: Gun
-    fireRate: 0.8
+    fireRate: 0.5
+    projectileSpeed: 60 #About as fast as I could make the rounds before things started breaking.
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/_HL/Weapons/Guns/Rifles/peregrineShoot.ogg # Credit: Freesound Community on Pixabay
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null #The lack of a bolt hold-open is intentional. Subject to change.
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
   - type: ItemSlots
     slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: MagazineRailgun
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRailgunPeregrine
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
         whitelist:
           tags:
-            - MagazineRailgunTag
+            - MagazineRailgunPeregrine
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: Cartridge15mmSabot
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge15mmSabot
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: AmmoCounter
   - type: GunRequiresWield
   - type: MagazineVisuals
     magState: mag
-    steps: 1
+    steps: 6
     zeroVisible: true
+  - type: Appearance
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.5
+    sprintModifier: 0.5
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 3
+    pvsIncrease: 0.3

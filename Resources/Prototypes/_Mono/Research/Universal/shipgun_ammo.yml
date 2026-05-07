@@ -15,6 +15,7 @@
   cost: 20000
   recipeUnlocks:
   - CharonSlugUniversal
+  - AmmoBox15mmSabot #HL Change
 
 - type: technology
   id: UniversalSubnuclearRailgunAmmo

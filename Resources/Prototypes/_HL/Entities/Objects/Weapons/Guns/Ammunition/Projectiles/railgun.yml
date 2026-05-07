@@ -1,0 +1,41 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  id: Bullet15mmSabot
+  name: bullet (15mm Sabot)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 65
+        Structural: 50
+    penetrationThreshold: 300
+    penetrationDamageTypeRequirement:
+      - Structural
+  - type: Sprite
+    noRot: false
+    sprite: _HL/Objects/Weapons/Guns/Projectiles/railgunprojectiles.rsi
+    layers:
+    - state: dart
+      shader: unshaded
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  id: Bullet15mmSabotImprovised
+  name: bullet (15mm Sabot)
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 45
+        Structural: 50
+    penetrationThreshold: 300
+    penetrationDamageTypeRequirement:
+      - Structural
+  - type: Sprite
+    noRot: false
+    sprite: _HL/Objects/Weapons/Guns/Projectiles/railgunprojectiles.rsi
+    layers:
+    - state: dart
+      shader: unshaded

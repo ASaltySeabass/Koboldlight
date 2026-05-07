@@ -230,7 +230,7 @@
   - Magazine8x65mmEmpty
   - Magazine762x54mmREmpty
   - Magazine762x51mmEmpty
-  - Magazine12_gaugeEmpty 
+  - Magazine12_gaugeEmpty
   - Magazine45_ACPSubMachineGunTopMountedEmpty
   - Magazine9x19mmSubMachineGunTopMountedEmpty
   - Magazine57x28mmSubMachineGunTopMountedEmpty
@@ -373,7 +373,8 @@
   - AmmoBox23x75mmSlug
   - AmmoBox23x75mmDozd
 # HL
-  - MagRailgun
+  - MagazineRailgunPeregrine
+  - AmmoBox15mmSabot
   - AmmoBox46x30mmBig
   - AmmoBox556x45mmBigFMJ
   - AmmoBox635x40mmCaselessBig
@@ -625,7 +626,8 @@
   - AmmoBox12_gaugeUranium
   - AmmoBox23x75mmUranium
 # HL
-  - MagRailgun
+  - MagazineRailgunPeregrine
+  - AmmoBox15mmSabot
   - MagazineNovaliteC1
   - MagazineNovaliteC1Empty
   - Magazine635x40mmCaseless

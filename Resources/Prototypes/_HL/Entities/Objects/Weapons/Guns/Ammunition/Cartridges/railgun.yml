@@ -1,0 +1,45 @@
+- type: entity
+  id: BaseCartridge15mmSabot
+  name: sabot (15mm)
+  parent: [BaseCartridge, BaseC3ContrabandNoValue]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - Cartridge15mmSabot
+  - type: CartridgeAmmo
+    proto: Bullet15mmSabot
+    muzzleFlash: MuzzleFlashEffectEnergyStun
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Guns/Ammunition/Casings/15mm_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  id: Cartridge15mmSabot
+  name: sabot (15mm)
+  parent: BaseCartridge15mmSabot
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet15mmSabot
+
+- type: entity
+  id: Cartridge15mmSabotImprovised
+  name: improvised sabot (15mm)
+  parent: BaseCartridge15mmSabot
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet15mmSabotImprovised
+  - type: Sprite
+    sprite: _HL/Objects/Weapons/Guns/Ammunition/Casings/15mm_casing.rsi
+    layers:
+    - state: improvised
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Construction
+    graph: SabotRailgunImprovisedCraftingGraph
+    node: sabot

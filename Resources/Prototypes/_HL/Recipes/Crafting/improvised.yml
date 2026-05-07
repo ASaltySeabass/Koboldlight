@@ -4,7 +4,15 @@
   startNode: start
   targetNode: mag
   category: construction-category-weapons
-  description: improvised-railgun-mag-desc
+  objectType: Item
+
+- type: construction
+  id: SabotRailgunImprovisedCrafting
+  graph: SabotRailgunImprovisedCraftingGraph
+  startNode: start
+  targetNode: sabot
+  category: construction-category-weapons
+  description: improvised-railgun-sabot-desc
   objectType: Item
 
 - type: construction

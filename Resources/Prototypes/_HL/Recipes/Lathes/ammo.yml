@@ -11,7 +11,7 @@
   completetime: 5
   materials:
     Brass: 10
-    
+
 - type: latheRecipe
   id: BulletCasing45_ACP
   result: MaterialBulletCasing45_ACP
@@ -81,7 +81,7 @@
   completetime: 5
   materials:
     Brass: 100
-    
+
 - type: latheRecipe
   id: BulletCasing12_gauge
   result: MaterialBulletCasing12_gauge
@@ -214,3 +214,12 @@
   id: AmmoBox762x54mmRRubberBig
   parent: AmmoBoxBigRubber
   result: AmmoBox762x54mmRRubberBig
+
+- type: latheRecipe
+  id: AmmoBox15mmSabot
+  result: AmmoBox15mmSabot
+  completetime: 10
+  materials:
+    Steel: 2000
+    Plasteel: 1000
+    Plastic: 1000

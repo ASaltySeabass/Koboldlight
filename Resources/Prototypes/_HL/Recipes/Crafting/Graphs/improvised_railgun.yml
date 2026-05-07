@@ -6,14 +6,31 @@
       edges:
         - to: mag
           steps:
-          - material: Plasma
-            amount: 5
-            doAfter: 0.5
-          - material: MetalRod
-            amount: 5
-            doAfter: 0.5
-          - material: Plasteel
-            amount: 5
-            doAfter: 5
+            - material: ReinforcedGlass
+              amount: 5
+              doAfter: 5
+            - material: MetalRod
+              amount: 5
+              doAfter: 5
+            - material: Plasteel
+              amount: 5
+              doAfter: 5
     - node: mag
-      entity: MagazineRailgunImprovised
+      entity: MagazineRailgunPeregrineImprovisedEmpty
+
+- type: constructionGraph
+  id: SabotRailgunImprovisedCraftingGraph
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: sabot
+          steps:
+            - material: MetalRod
+              amount: 1
+              doAfter: 2
+            - material: Plasteel
+              amount: 1
+              doAfter: 2
+    - node: sabot
+      entity: Cartridge15mmSabotImprovised

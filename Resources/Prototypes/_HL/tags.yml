@@ -317,7 +317,10 @@
 
 # Peregrine
 - type: Tag
-  id: MagazineRailgunTag
+  id: MagazineRailgunPeregrine
+
+- type: Tag
+  id: Cartridge15mmSabot
 
 #bolts
 - type: Tag
@@ -363,7 +366,7 @@
 
 - type: Tag
   id: Cartridge25x59HE
-  
+
 - type: Tag
   id: DinoFang
 

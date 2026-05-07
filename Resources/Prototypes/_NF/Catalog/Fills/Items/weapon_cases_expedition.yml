@@ -699,7 +699,7 @@
     contents:
     - id: WeaponRailgunPeregrine
       amount: 1
-    - id: MagazineRailgun
+    - id: MagazineRailgunPeregrine
       amount: 2
 
 - type: entity

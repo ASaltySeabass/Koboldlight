@@ -1,0 +1,18 @@
+- type: entity #Ported from Impstation by ASaltySeabass - The sprites were already there, just not the muzzle flash prototype
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectEnergyStun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    enabled: true
+    color: "#0ab8c4"
+    radius: 1.4
+    energy: 5.0
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.15, 0
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi
+      state: energystun
