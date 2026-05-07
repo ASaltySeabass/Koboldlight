@@ -11,19 +11,6 @@
     Silver: 50
     Gold: 50
 
-- type: latheRecipe
-  parent: BaseAmmoBoxRecipe
-  id: MagazineBoxRailgunPeregrine
-  result: MagazineRailgunPeregrineEmpty
-  completetime: 10
-  materials:
-    Plasteel: 500
-    Plastic: 500
-    Steel: 500
-    Glass: 200
-    Silver: 50
-    Gold: 50
-
 # Security Borg limbs
 
 - type: latheRecipe
